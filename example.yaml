@@ -1,0 +1,289 @@
+datasets:
+  ethereum-mainnet:
+    kind: evm
+    metadata:
+      display_name: Ethereum
+      logo_url: https://cdn.subsquid.io/img/networks/ethereum.svg
+      type: mainnet
+      evm:
+        chain_id: 1
+    schema:
+      blocks:
+        fields:
+          - name: number
+            type: int32
+          - name: hash
+            type: string
+          - name: parent_hash
+            type: string
+          - name: nonce
+            type: string
+            nullable: true
+          - name: sha3_uncles
+            type: string
+            nullable: true
+          - name: logs_bloom
+            type: string
+          - name: transactions_root
+            type: string
+          - name: state_root
+            type: string
+          - name: receipts_root
+            type: string
+          - name: mix_hash
+            type: string
+            nullable: true
+          - name: miner
+            type: string
+          - name: difficulty
+            type: string
+            nullable: true
+          - name: total_difficulty
+            type: string
+            nullable: true
+          - name: extra_data
+            type: string
+          - name: size
+            type: int32
+          - name: gas_used
+            type: string
+          - name: gas_limit
+            type: string
+          - name: timestamp
+            type: int32
+          - name: base_fee_per_gas
+            type: string
+            nullable: true
+          - name: l1_block_number
+            type: int32
+            nullable: true
+          - name: blob_gas_used
+            type: string
+            nullable: true
+          - name: excess_blob_gas
+            type: string
+            nullable: true
+
+      transactions:
+        fields:
+          - name: block_number
+            type: int32
+          - name: transaction_index
+            type: int32
+          - name: hash
+            type: string
+          - name: from
+            type: string
+          - name: to
+            type: string
+            nullable: true
+          - name: gas
+            type: string
+          - name: gas_price
+            type: string
+            nullable: true
+          - name: max_fee_per_gas
+            type: string
+            nullable: true
+          - name: max_priority_fee_per_gas
+            type: string
+            nullable: true
+          - name: input
+            type: string
+          - name: nonce
+            type: int32
+          - name: value
+            type: string
+          - name: v
+            type: string
+            nullable: true
+          - name: r
+            type: string
+            nullable: true
+          - name: s
+            type: string
+            nullable: true
+          - name: y_parity
+            type: int32
+            nullable: true
+          - name: chain_id
+            type: int32
+            nullable: true
+          - name: max_fee_per_blob_gas
+            type: string
+            nullable: true
+          - name: blob_versioned_hashes
+            type: string[]
+            nullable: true
+          - name: sighash
+            type: string
+            nullable: true
+          - name: gas_used
+            type: string
+          - name: cumulative_gas_used
+            type: string
+          - name: effective_gas_price
+            type: string
+            nullable: true
+          - name: type
+            type: int32
+            nullable: true
+          - name: status
+            type: int32
+          - name: contract_address
+            type: string
+            nullable: true
+          - name: l1_fee
+            type: string
+            nullable: true
+          - name: l1_fee_scalar
+            type: string
+            nullable: true
+          - name: l1_gas_price
+            type: string
+            nullable: true
+          - name: l1_gas_used
+            type: string
+            nullable: true
+          - name: l1_blob_base_fee
+            type: string
+            nullable: true
+          - name: l1_blob_base_fee_scalar
+            type: int32
+            nullable: true
+          - name: l1_base_fee_scalar
+            type: int32
+            nullable: true
+
+      logs:
+        fields:
+          - name: block_number
+            type: int32
+          - name: log_index
+            type: int32
+          - name: transaction_index
+            type: int32
+          - name: transaction_hash
+            type: string
+          - name: address
+            type: string
+          - name: data
+            type: string
+          - name: topics
+            type: string[]
+          - name: topic0
+            type: string
+            nullable: true
+          - name: topic1
+            type: string
+            nullable: true
+          - name: topic2
+            type: string
+            nullable: true
+          - name: topic3
+            type: string
+            nullable: true
+
+      traces:
+        fields:
+          - name: block_number
+            type: int32
+          - name: transaction_index
+            type: int32
+          - name: trace_address
+            type: int32[]
+          - name: subtraces
+            type: int32
+          - name: type
+            type: string
+          - name: error
+            type: string
+            nullable: true
+          - name: revert_reason
+            type: string
+            nullable: true
+          - name: create_from
+            type: string
+            nullable: true
+          - name: create_value
+            type: string
+            nullable: true
+          - name: create_gas
+            type: string
+            nullable: true
+          - name: create_init
+            type: string
+            nullable: true
+          - name: create_result_gas_used
+            type: string
+            nullable: true
+          - name: create_result_code
+            type: string
+            nullable: true
+          - name: create_result_address
+            type: string
+            nullable: true
+          - name: call_from
+            type: string
+            nullable: true
+          - name: call_to
+            type: string
+            nullable: true
+          - name: call_value
+            type: string
+            nullable: true
+          - name: call_gas
+            type: string
+            nullable: true
+          - name: call_sighash
+            type: string
+            nullable: true
+          - name: call_input
+            type: string
+            nullable: true
+          - name: call_type
+            type: string
+            nullable: true
+          - name: call_result_gas_used
+            type: string
+            nullable: true
+          - name: call_result_output
+            type: string
+            nullable: true
+          - name: suicide_address
+            type: string
+            nullable: true
+          - name: suicide_refund_address
+            type: string
+            nullable: true
+          - name: suicide_balance
+            type: string
+            nullable: true
+          - name: reward_author
+            type: string
+            nullable: true
+          - name: reward_value
+            type: string
+            nullable: true
+          - name: reward_type
+            type: string
+            nullable: true
+
+      statediffs:
+        fields:
+          - name: block_number
+            type: int32
+          - name: transaction_index
+            type: int32
+          - name: address
+            type: string
+          - name: key
+            type: string
+          - name: kind
+            type: string
+          - name: prev
+            type: string
+            nullable: true
+          - name: next
+            type: string
+            nullable: true
